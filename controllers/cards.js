@@ -29,19 +29,20 @@ add: function(req, res){
   knex('cards') 
   .where('id', req.params.id)
   .then((result) => {
+   // console.log(result);
     req.session.deck.push(result[0]);
-  
     res.redirect('/')
   
   })
-},
+},  
 
 remove: function(req, res){
-  let deck = req.session.deck
+  let deck = req.session.deck;
   for(var i = 0; i < deck.length; i++){
-      if(deck[i] === req.params.id){
+      if(deck[i].id == req.params.id){
         deck.splice(i, 1);
-        redirect('/');
+       // console.log(deck)
+        res.redirect('/');
         return;
       }
   }

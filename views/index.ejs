@@ -21,7 +21,24 @@
             <input type="submit">
         </form>
 
-        <div>
+        <div class="current_list">
+            <h2>Current List</h2>
+                <ul>
+                        <% for (var i = 0; i < deck.length; i++){ %>
+                           
+                           <li>Mana: <%= deck[i].mana %></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                            <li>Attack: <%= deck[i].attack %></li>
+                            <li>Health: <%= deck[i].health %></li>
+                            <li class="last">Desc:<%= deck[i].description %></li>
+                            <li class="auth_btn"><a href="/cards/remove/<%=cards[i].id%>">Remove</a></li>
+                           
+                                        <% }  %>
+                                        </ul>
+
+        </div>
+
+        <div class="all_cards">
         
             <h2>ALL CARDS</h2>
            <ul>
@@ -33,10 +50,11 @@
                 <li>Health: <%= cards[i].health %></li>
                 <li class="last">Desc:<%= cards[i].description %></li>
                 <li class="auth_btn"><a href="/cards/add/<%=cards[i].id%>">Add</a></li>
-               
-                            <li class="auth_btn"><a href="/cards/remove/<%=cards[i].id%>">remove</a></li>
+            
                             <% }  %>
                             </ul>
+
+                        
         </div>
         
         <!--script src="" async defer--><!--/script-->
