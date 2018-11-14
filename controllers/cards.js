@@ -31,7 +31,7 @@ add: function(req, res){
   .then((result) => {
    // console.log(result);
     req.session.deck.push(result[0]);
-    res.redirect('/')
+    res.redirect('/');
   
   })
 },  
